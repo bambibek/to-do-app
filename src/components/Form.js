@@ -3,7 +3,6 @@ import React from 'react';
 const Form = (props) => {
   //text Handler
   const handleInputChange = (e) => {
-    console.log(e.target.value);
     props.setInputValue(e.target.value);
   };
   //submit handler
