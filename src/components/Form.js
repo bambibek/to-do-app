@@ -1,11 +1,34 @@
-import React from "react";
+import React from 'react';
 
-const Form = () => {
+const Form = (props) => {
+  //text Handler
+  const handleInputChange = (e) => {
+    console.log(e.target.value);
+    props.setInputValue(e.target.value);
+  };
+  //submit handler
+  const handleTodoSubmit = (e) => {
+    e.preventDefault();
+    props.setTodos([
+      ...props.todos,
+      { text: props.inputValue, completed: false, id: Math.random() * 1000 },
+    ]);
+    props.setInputValue('');
+  };
   return (
     <>
       <form>
-        <input type="text" className="todo-input" />
-        <button className="todo-button" type="submit">
+        <input
+          onChange={handleInputChange}
+          value={props.inputValue}
+          type="text"
+          className="todo-input"
+        />
+        <button
+          onClick={handleTodoSubmit}
+          className="todo-button"
+          type="submit"
+        >
           <i className="fas fa-plus-square"></i>
         </button>
         <div className="select">
