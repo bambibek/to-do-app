@@ -38,7 +38,7 @@ function App() {
     }
   };
 
-  //SAVE TO LOCAL STORAGE
+  //SAVE TO LOCAL
   const saveLocalTodos = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
   };
@@ -49,7 +49,7 @@ function App() {
     } else {
       let todoLocal = JSON.parse(localStorage.getItem('todos'));
       setTodos(todoLocal);
-      console.log(todoLocal);
+      // console.log(todoLocal);
     }
   };
 
