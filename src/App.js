@@ -8,6 +8,7 @@ import TodoList from './components/TodoList';
 function App() {
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState([]);
+
   return (
     <div className="App">
       <header>
@@ -19,7 +20,7 @@ function App() {
         setInputValue={setInputValue}
         inputValue={inputValue}
       />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
